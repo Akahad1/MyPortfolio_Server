@@ -14,6 +14,10 @@ const projectSchma = new Schema<TProject>({
     type: [String],
     default: [],
   },
+  feature: {
+    type: [String],
+    default: [],
+  },
   images: {
     type: [String],
     default: [],

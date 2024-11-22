@@ -7,11 +7,10 @@ const createProject = catchAsync(async (req, res) => {
   console.log(files);
   const imageLinks = files.map((file) => file.path);
   console.log(imageLinks);
-  const bodyData =
-    typeof req.body.data === "string" ? JSON.parse(req.body.data) : req.body;
 
+  console.log(req.body);
   const result = await projectServices.PostProjectFromDB({
-    ...bodyData,
+    ...req.body,
     images: imageLinks,
   });
 
@@ -47,8 +46,21 @@ const deletedProject = catchAsync(async (req, res) => {
     data: result,
   });
 });
+const getSpecificProject = catchAsync(async (req, res) => {
+  const { id } = req.params;
+  const result = await projectServices.getSpecificProjectFromDB(id);
+
+  sendResponse(res, {
+    statusCode: 400,
+    success: true,
+    message: " get SpecificProject   successfully",
+
+    data: result,
+  });
+});
 export const projcetController = {
   createProject,
   getProject,
   deletedProject,
+  getSpecificProject,
 };

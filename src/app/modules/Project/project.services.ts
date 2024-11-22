@@ -13,8 +13,13 @@ const deletedProjectFromDB = async (id: string) => {
   const result = await Project.findByIdAndDelete(id);
   return result;
 };
+const getSpecificProjectFromDB = async (id: string) => {
+  const result = await Project.findById(id);
+  return result;
+};
 export const projectServices = {
   PostProjectFromDB,
   getProjectFromDB,
   deletedProjectFromDB,
+  getSpecificProjectFromDB,
 };

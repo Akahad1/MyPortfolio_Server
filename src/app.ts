@@ -7,7 +7,12 @@ const app: Application = express();
 // Middleware to parse JSON and handle CORS
 // { origin: ["https://assinment6-theta.vercel.app"], credentials: true }
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://genuine-bavarois-cc1e32.netlify.app"],
+    credentials: true,
+  })
+);
 
 // Basic test route
 app.get("/", (req: Request, res: Response) => {

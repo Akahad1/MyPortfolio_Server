@@ -11,6 +11,9 @@ export const skilsSchema = new Schema<TSkills>({
     required: true,
     unique: true,
   },
+  description: {
+    type: String,
+  },
 });
 
 export const Skills = model<TSkills>("Skills", skilsSchema);

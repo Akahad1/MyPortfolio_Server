@@ -1,8 +1,9 @@
 export interface TProject {
   ProjectName: string;
   description: string;
-  ToolsTechnologies: [];
   images: [];
+  ToolsTechnologies: [];
+  feature: [];
   LiveLink: string;
   ClientSideGithubLink: string;
   ServerSideGithubLink: string;
