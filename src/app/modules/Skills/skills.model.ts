@@ -1,7 +1,7 @@
 import { model, Schema } from "mongoose";
-import { TSkils } from "./skils.interface";
+import { TSkills } from "./skills.interface";
 
-export const skilsSchema = new Schema<TSkils>({
+export const skilsSchema = new Schema<TSkills>({
   image: {
     type: String,
     required: true,
@@ -13,4 +13,4 @@ export const skilsSchema = new Schema<TSkils>({
   },
 });
 
-export const Skils = model<TSkils>("Skils", skilsSchema);
+export const Skills = model<TSkills>("Skills", skilsSchema);
