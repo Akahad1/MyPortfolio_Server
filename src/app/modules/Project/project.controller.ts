@@ -24,6 +24,31 @@ const createProject = catchAsync(async (req, res) => {
   });
 });
 
+const getProject = catchAsync(async (req, res) => {
+  const result = await projectServices.getProjectFromDB();
+
+  sendResponse(res, {
+    statusCode: 400,
+    success: true,
+    message: "project get  successfully",
+
+    data: result,
+  });
+});
+const deletedProject = catchAsync(async (req, res) => {
+  const { id } = req.params;
+  const result = await projectServices.deletedProjectFromDB(id);
+
+  sendResponse(res, {
+    statusCode: 400,
+    success: true,
+    message: " deleted project   successfully",
+
+    data: result,
+  });
+});
 export const projcetController = {
   createProject,
+  getProject,
+  deletedProject,
 };

@@ -9,4 +9,7 @@ router.post(
   projcetController.createProject
 );
 
+router.get("/", projcetController.getProject);
+router.delete("/:id", projcetController.deletedProject);
+
 export const ProjcetRouter = router;
